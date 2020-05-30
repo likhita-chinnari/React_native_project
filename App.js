@@ -6,43 +6,51 @@
  * @flow strict-local
  */
 
-import React, { Component } from 'react'
-import { createStackNavigator, createAppContainer } from 'react-navigation';  
+import React,{Component} from 'react';
 import {
+  SafeAreaView,
   StyleSheet,
-  TouchableOpacity,
-  Text,
+  ScrollView,
   View,
+  Text,
+  StatusBar,
   Button,
-} from 'react-native'
-class App extends Component {
- render() {
-    return (
-      <View>
-        <Button  
-          title="Sign In"
-          onPress={() => this.props.navigation.navigate('SignIn')}    
-          /> 
-          <Button  
-          title="Sign Up"  
-          /> 
-      </View>
-    )
+  Alert
+} from 'react-native';
+
+import {
+  Header,
+  LearnMoreLinks,
+  Colors,
+  DebugInstructions,
+  ReloadInstructions,
+} from 'react-native/Libraries/NewAppScreen';
+ 
+import Login from './src/pages/login';
+export default class App extends Component<{}>{
+  render(){
+  return (
+     
+    <View style ={styles.container}>
+      <StatusBar
+      backgoundColor="#1c313a"
+      barStyle="light-content"/>
+      <Login/>
+    </View>
+    );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  button: {
-    alignItems: 'center',
-    backgroundColor: '#DDDDDD',
-    padding: 10,
-    marginBottom: 10
-  }
-})
 
-export default App;
+const styles = StyleSheet.create({
+  container : {
+    backgroundColor : '#455a64',
+    flex:1,
+    alignItems:'center',
+    justifyContent:'center'
+  }
+});
+
+
+
+
